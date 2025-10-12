@@ -1,0 +1,180 @@
+networks:
+  mednet:
+volumes:
+  pacs-db:
+  pacs-ldap:
+  pacs-archive:
+  pacs-storage:
+  oemr-db:
+  oemr-sites:
+  oemr-logs:
+  mirth-appdata:
+  mirth-db:
+services:
+  ldap:
+    image: dcm4che/slapd-dcm4chee:${LDAP_TAG}
+    restart: unless-stopped
+    networks: [mednet]
+    ports: ["389:389"]
+    environment:
+      LDAP_BASE_DN: ${LDAP_BASE_DN}
+      LDAP_ROOTPASS: ${LDAP_ROOTPASS}
+    volumes:
+      - pacs-ldap:/var/lib/openldap/openldap-data
+      - ${DATA_DIR}/slapd.d:/etc/openldap/slapd.d
+    healthcheck:
+      test: ["CMD", "ldapsearch", "-x", "-H", "ldap://localhost:389", "-b", "${LDAP_BASE_DN}", "-s", "base"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: dcm4che/postgres-dcm4chee:${PG_TAG}
+    restart: unless-stopped
+    networks: [mednet]
+    ports: ["5432:5432"]
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pacs-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+
+  arc:
+    image: dcm4che/dcm4chee-arc-psql:${ARC_TAG}
+    restart: unless-stopped
+    networks: [mednet]
+    depends_on:
+      ldap: {condition: service_healthy}
+      db:   {condition: service_healthy}
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+      - "11112:11112"
+      - "2575:2575"
+    environment:
+      LDAP_URL: ldap://ldap:389
+      LDAP_BASE_DN: ${LDAP_BASE_DN}
+      LDAP_ROOTPASS: ${LDAP_ROOTPASS}
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: ${POSTGRES_DB}
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      ARCHIVE_DEVICE_NAME: ${ARCHIVE_DEVICE_NAME}
+      AE_TITLE: ${AE_TITLE}
+      JAVA_OPTS: ${JAVA_OPTS}
+    volumes:
+      - pacs-archive:/opt/wildfly/standalone
+      - pacs-storage:/storage
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/dcm4chee-arc/ui2/"]
+      interval: 30s
+      timeout: 10s
+      retries: 20
+      start_period: 90s
+
+  ohif:
+    image: ohif/app:${OHIF_TAG}
+    restart: unless-stopped
+    networks: [mednet]
+    depends_on: [arc]
+    ports: ["3000:80"]
+    volumes:
+      - ./config/ohif-config.js:/usr/share/nginx/html/app-config.js:ro
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 10
+  mirth-db:
+    image: postgres:15
+    restart: unless-stopped
+    networks: [mednet]
+    environment:
+      POSTGRES_DB: ${MIRTH_DB_NAME}
+      POSTGRES_USER: ${MIRTH_DB_USER}
+      POSTGRES_PASSWORD: ${MIRTH_DB_PASS}
+    volumes:
+      - mirth-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${MIRTH_DB_USER} -d ${MIRTH_DB_NAME}"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+  mirth:
+    image: nextgenhealthcare/connect:${MIRTH_TAG}
+    restart: unless-stopped
+    networks: [mednet]
+    depends_on:
+      mirth-db: {condition: service_healthy}
+    ports:
+      - "8081:8080"
+      - "8443:8443"
+      - "11113:11113"
+    environment:
+      DATABASE: postgres
+      DATABASE_URL: jdbc:postgresql://mirth-db:5432/${MIRTH_DB_NAME}
+      DATABASE_USERNAME: ${MIRTH_DB_USER}
+      DATABASE_PASSWORD: ${MIRTH_DB_PASS}
+      DATABASE_MAX_CONNECTIONS: "20"
+      DATABASE_MAX_RETRY: "5"
+      DATABASE_RETRY_WAIT: "10000"
+      KEYSTORE_STOREPASS: docker_storepass
+      KEYSTORE_KEYPASS: docker_keypass
+      VMOPTIONS: "-Xmx1024m"
+    volumes:
+      - mirth-appdata:/opt/connect/appdata
+    healthcheck:
+      test: ["CMD", "curl", "-ksf", "https://localhost:8443"]
+      interval: 30s
+      timeout: 5s
+      retries: 10
+  openemr-db:
+    image: mariadb:${MARIADB_TAG}
+    restart: unless-stopped
+    networks: [mednet]
+    environment:
+      MYSQL_ROOT_PASSWORD: ${OEMR_DB_ROOT}
+      MYSQL_DATABASE: ${OEMR_DB_NAME}
+      MYSQL_USER: ${OEMR_DB_USER}
+      MYSQL_PASSWORD: ${OEMR_DB_PASS}
+    volumes:
+      - oemr-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${OEMR_DB_ROOT}"]
+      start_period: 30s
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  openemr:
+    image: openemr/openemr:${OEMR_TAG}
+    restart: unless-stopped
+    depends_on:
+      openemr-db: {condition: service_healthy}
+    networks: [mednet]
+    ports:
+      - "8300:80"
+    environment:
+      MYSQL_HOST: openemr-db
+      MYSQL_ROOT_PASS: ${OEMR_DB_ROOT}
+      MYSQL_USER: ${OEMR_DB_USER}
+      MYSQL_PASS: ${OEMR_DB_PASS}
+      OE_USER: ${OEMR_ADMIN_USER}
+      OE_PASS: ${OEMR_ADMIN_PASS}
+    volumes:
+      - oemr-logs:/var/log
+      - oemr-sites:/var/www/localhost/htdocs/openemr/sites
+      # Temporarily disabled due to permission issues
+      # - ./openemr/custom_menus:/var/www/localhost/htdocs/openemr/sites/default/documents/custom_menus
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost/"]
+      interval: 40s
+      timeout: 5s
+      retries: 20

@@ -1,0 +1,9 @@
+[
+  {
+    "label": "Imaging Studies",
+    "menu_id": "imaging",
+    "target": "browser",
+    "url": "http://localhost:3000/",
+    "requirement": 1
+  }
+]
