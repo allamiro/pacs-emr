@@ -130,7 +130,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
   openemr:
     restart: always
-    image: openemr/openemr:7.0
+    image: openemr/openemr:7.0.0
     networks:
       - dcm4chee-network
     ports:
@@ -146,9 +146,6 @@ services:
       MYSQL_PASS: openemr
       OE_USER: admin
       OE_PASS: pass
-    depends_on:
-      - mysql
-
   mirth-db:
     image: postgres:15
     restart: unless-stopped
@@ -163,8 +160,6 @@ services:
   mirth:
     image: nextgenhealthcare/connect:${MIRTH_TAG}
     restart: unless-stopped
-    depends_on:
-      mirth-db: 
     ports:
       - "8081:8080"
       - "8443:8443"
