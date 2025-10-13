@@ -128,6 +128,16 @@ services:
     - mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: openemr
+      MYSQL_USER: openemr
+      MYSQL_PASSWORD: openemr
+    networks:
+      - dcm4chee-network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -uroot -p\"$$MYSQL_ROOT_PASSWORD\" --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
   openemr:
     restart: always
     image: openemr/openemr:7.0.0
@@ -144,8 +154,12 @@ services:
       MYSQL_ROOT_PASS: root
       MYSQL_USER: openemr
       MYSQL_PASS: openemr
+      MYSQL_DATABASE: openemr
       OE_USER: admin
       OE_PASS: pass
+    depends_on:
+      mysql:
+        condition: service_healthy
   mirth-db:
     image: postgres:15
     restart: unless-stopped
