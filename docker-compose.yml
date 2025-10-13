@@ -147,7 +147,7 @@ services:
       OE_USER: admin
       OE_PASS: pass
     depends_on:
-      - mysql:
+      - mysql
 
   mirth-db:
     image: postgres:15
