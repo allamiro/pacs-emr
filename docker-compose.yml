@@ -119,11 +119,6 @@ services:
       - dcm4chee-network
     depends_on:
       - arc
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
 
   mysql:
     restart: always
@@ -178,7 +173,7 @@ services:
       - dcm4chee-network
     environment:
       DATABASE: postgres
-      DATABASE_URL: jdbc:postgresql://mirth-db:5432/${MIRTH_DB_NAME}
+      DATABASE_URL: jdbc:postgresql://mirth-db:5433/${MIRTH_DB_NAME}
       DATABASE_USERNAME: ${MIRTH_DB_USER}
       DATABASE_PASSWORD: ${MIRTH_DB_PASS}
       DATABASE_MAX_CONNECTIONS: "20"
