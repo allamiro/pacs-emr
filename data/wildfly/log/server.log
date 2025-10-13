@@ -875,3 +875,22 @@
 2025-10-13 15:46:24,501 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) finished UPSProcessingScheduler.execute()
 2025-10-13 15:46:36,494 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) start AuditScheduler.execute()
 2025-10-13 15:46:36,495 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) finished AuditScheduler.execute()
+2025-10-13 15:46:52,605 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) start IANScheduler.execute()
+2025-10-13 15:46:52,611 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) finished IANScheduler.execute()
+2025-10-13 15:46:54,308 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) start PurgeStorageScheduler.execute()
+2025-10-13 15:46:54,309 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) finished PurgeStorageScheduler.execute()
+2025-10-13 15:46:54,310 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-138) Start deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:46:54,316 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-138) Finished deleting 0 from Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:46:54,316 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-138) Finished deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:46:57,330 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) start TaskScheduler.execute()
+2025-10-13 15:46:57,342 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) finished TaskScheduler.execute()
+2025-10-13 15:47:01,405 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) start StudySizeScheduler.execute()
+2025-10-13 15:47:01,416 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) finished StudySizeScheduler.execute()
+2025-10-13 15:47:24,505 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) start UPSProcessingScheduler.execute()
+2025-10-13 15:47:24,511 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) finished UPSProcessingScheduler.execute()
+2025-10-13 15:47:36,496 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) start AuditScheduler.execute()
+2025-10-13 15:47:36,496 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) finished AuditScheduler.execute()
+2025-10-13 15:47:52,616 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) start IANScheduler.execute()
+2025-10-13 15:47:52,624 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) finished IANScheduler.execute()
+2025-10-13 15:47:57,329 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) start TaskScheduler.execute()
+2025-10-13 15:47:57,348 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) finished TaskScheduler.execute()
