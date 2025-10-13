@@ -102,10 +102,6 @@ services:
       timeout: 30s
       retries: 3
       start_period: 120s
-    # Uncomment if you encounter memory issues
-    # security_opt:
-    #   - seccomp:unconfined
-
   ohif-viewer:
     image: ohif/app:v3.8.0
     container_name: dcm4chee-ohif
@@ -129,6 +125,71 @@ services:
       timeout: 10s
       retries: 3
 
+  mysql:
+    restart: always
+    image: mariadb:11.8
+    command: ['mariadbd','--character-set-server=utf8mb4']
+    volumes:
+    - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  openemr:
+    restart: always
+    image: openemr/openemr:7.0
+    networks:
+      - dcm4chee-network
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - logvolume01:/var/log
+    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_ROOT_PASS: root
+      MYSQL_USER: openemr
+      MYSQL_PASS: openemr
+      OE_USER: admin
+      OE_PASS: pass
+    depends_on:
+      mysql:
+
+  mirth-db:
+    image: postgres:15
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: ${MIRTH_DB_NAME}
+      POSTGRES_USER: ${MIRTH_DB_USER}
+      POSTGRES_PASSWORD: ${MIRTH_DB_PASS}
+    volumes:
+      - mirth-db:/var/lib/postgresql/data
+  mirth:
+    image: nextgenhealthcare/connect:${MIRTH_TAG}
+    restart: unless-stopped
+    depends_on:
+      mirth-db: 
+    ports:
+      - "8081:8080"
+      - "8443:8443"
+      - "11113:11113"
+    networks:
+      - dcm4chee-network
+    environment:
+      DATABASE: postgres
+      DATABASE_URL: jdbc:postgresql://mirth-db:5432/${MIRTH_DB_NAME}
+      DATABASE_USERNAME: ${MIRTH_DB_USER}
+      DATABASE_PASSWORD: ${MIRTH_DB_PASS}
+      DATABASE_MAX_CONNECTIONS: "20"
+      DATABASE_MAX_RETRY: "5"
+      DATABASE_RETRY_WAIT: "10000"
+      KEYSTORE_STOREPASS: docker_storepass
+      KEYSTORE_KEYPASS: docker_keypass
+      VMOPTIONS: "-Xmx1024m"
+    volumes:
+      - mirth-appdata:/opt/connect/appdata
+
 networks:
   dcm4chee-network:
     driver: bridge
@@ -144,4 +205,14 @@ volumes:
   wildfly-data:
     driver: local
   storage-data:
+    driver: local
+  mysql-data:
+    driver: local
+  logvolume01:
+    driver: local
+  sitevolume:
+    driver: local
+  mirth-db:
+    driver: local
+  mirth-appdata:
     driver: local

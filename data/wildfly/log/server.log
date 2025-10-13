@@ -1,0 +1,826 @@
+2025-10-13 15:12:18,382 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.6.Final
+2025-10-13 15:12:18,649 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.5.Final
+2025-10-13 15:12:18,653 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2025-10-13 15:12:18,711 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: WildFly 36.0.1.Final (WildFly Core 28.0.1.Final) starting
+2025-10-13 15:12:18,713 DEBUG [org.jboss.as.config] (MSC service thread 1-1) Configured system properties:
+	[Standalone] = 
+	file.encoding = UTF-8
+	file.separator = /
+	java.class.path = /opt/wildfly/jboss-modules.jar
+	java.class.version = 65.0
+	java.home = /usr/lib/jvm/java-21-amazon-corretto.aarch64
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 21.0.7+6-LTS
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 21
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Amazon.com Inc.
+	java.vendor.url = https://aws.amazon.com/corretto/
+	java.vendor.url.bug = https://github.com/corretto/corretto-21/issues/
+	java.vendor.version = Corretto-21.0.7.6.1
+	java.version = 21.0.7
+	java.version.date = 2025-04-15
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 21
+	java.vm.vendor = Amazon.com Inc.
+	java.vm.version = 21.0.7+6-LTS
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.bind.address = 0.0.0.0
+	jboss.bind.address.management = 0.0.0.0
+	jboss.home.dir = /opt/wildfly
+	jboss.host.name = 96a55c21b244
+	jboss.http.port = 8080
+	jboss.https.port = 8443
+	jboss.management.http.port = 9990
+	jboss.management.https.port = 9993
+	jboss.node.name = 96a55c21b244
+	jboss.qualified.host.name = 96a55c21b244
+	jboss.redirect.https.port = 8443
+	jboss.server.base.dir = /opt/wildfly/standalone
+	jboss.server.config.dir = /opt/wildfly/standalone/configuration
+	jboss.server.data.dir = /opt/wildfly/standalone/data
+	jboss.server.log.dir = /opt/wildfly/standalone/log
+	jboss.server.name = 96a55c21b244
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /opt/wildfly/standalone/tmp
+	jdk.debug = release
+	jdk.serialFilter = maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000
+	line.separator = 
+
+	logging.configuration = file:/opt/wildfly/standalone/configuration/logging.properties
+	module.path = /opt/wildfly/modules
+	native.encoding = UTF-8
+	org.jboss.boot.log.file = /opt/wildfly/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = aarch64
+	os.name = Linux
+	os.version = 6.10.14-linuxkit
+	path.separator = :
+	stderr.encoding = UTF-8
+	stdout.encoding = UTF-8
+	sun.arch.data.model = 64
+	sun.boot.library.path = /usr/lib/jvm/java-21-amazon-corretto.aarch64/lib
+	sun.cpu.endian = little
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /opt/wildfly/jboss-modules.jar -mp /opt/wildfly/modules org.jboss.as.standalone -Djboss.home.dir=/opt/wildfly -Djboss.server.base.dir=/opt/wildfly/standalone -b 0.0.0.0 -bmanagement 0.0.0.0 -c dcm4chee-arc.xml -Djboss.management.http.port=9990 -Djboss.management.https.port=9993 -Djboss.http.port=8080 -Djboss.https.port=8443 -Djboss.redirect.https.port=8443
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	user.dir = /
+	user.home = /opt/wildfly
+	user.language = en
+	user.name = wildfly
+	user.timezone = Etc/UTC
+2025-10-13 15:12:18,714 DEBUG [org.jboss.as.config] (MSC service thread 1-1) VM Arguments: -D[Standalone] -Djdk.serialFilter=maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000 -Xms512m -Xmx2g -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED -Dorg.jboss.boot.log.file=/opt/wildfly/standalone/log/server.log -Dlogging.configuration=file:/opt/wildfly/standalone/configuration/logging.properties 
+2025-10-13 15:12:19,109 INFO  [org.wildfly.security] (Controller Boot Thread) ELY00001: WildFly Elytron version 2.6.4.Final
+2025-10-13 15:12:19,502 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 7) WFLYDR0001: Content added at location /opt/wildfly/standalone/data/content/70/d970ffdbd6ad63a1b49ef9cc3f8191d6f2f36c/content
+2025-10-13 15:12:19,537 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 7) WFLYDR0001: Content added at location /opt/wildfly/standalone/data/content/0c/b94e444c8cb69fedd3877e8b227dd1612f9a5e/content
+2025-10-13 15:12:19,544 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0041: Creating http management service using socket-binding (management-http) and secure-socket-binding (management-https)
+2025-10-13 15:12:19,553 INFO  [org.xnio] (MSC service thread 1-3) XNIO version 3.8.16.Final
+2025-10-13 15:12:19,557 INFO  [org.xnio.nio] (MSC service thread 1-3) XNIO NIO Implementation Version 3.8.16.Final
+2025-10-13 15:12:19,569 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2025-10-13 15:12:19,573 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0001: Activating Infinispan subsystem.
+2025-10-13 15:12:19,575 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 54) WFLYHEALTH0001: Activating Base Health Subsystem
+2025-10-13 15:12:19,578 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 57) WFLYRS0016: RESTEasy version 6.2.12.Final
+2025-10-13 15:12:19,578 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 66) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2025-10-13 15:12:19,579 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 65) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2025-10-13 15:12:19,583 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 67) WFLYNAM0001: Activating Naming Subsystem
+2025-10-13 15:12:19,584 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 62) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2025-10-13 15:12:19,586 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2025-10-13 15:12:19,586 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2025-10-13 15:12:19,587 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 56) WFLYIO001: Worker 'default' has auto-configured to 20 IO threads with 160 max task threads based on your 10 available processors
+2025-10-13 15:12:19,593 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2025-10-13 15:12:19,594 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "dcm4chee-arc-ear-5.34.0-psql.ear" (runtime-name: "dcm4chee-arc-ear-5.34.0-psql.ear")
+2025-10-13 15:12:19,593 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "dcm4chee-arc-ui2-5.34.0.war" (runtime-name: "dcm4chee-arc-ui2-5.34.0.war")
+2025-10-13 15:12:19,599 INFO  [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.13.Final)
+2025-10-13 15:12:19,597 INFO  [org.jboss.remoting] (MSC service thread 1-6) JBoss Remoting version 5.0.31.Final
+2025-10-13 15:12:19,610 INFO  [org.jboss.as.naming] (MSC service thread 1-7) WFLYNAM0003: Starting Naming Service
+2025-10-13 15:12:19,611 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2025-10-13 15:12:19,617 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = h2
+2025-10-13 15:12:19,619 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2025-10-13 15:12:19,619 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0005: Deploying non-JDBC-compliant driver class org.postgresql.Driver (version 42.7)
+2025-10-13 15:12:19,620 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = psql
+2025-10-13 15:12:19,627 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0003: Undertow 2.3.18.Final starting
+2025-10-13 15:12:19,676 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 160 (per class), which is derived from thread worker pool sizing.
+2025-10-13 15:12:19,676 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 40 (per class), which is derived from the number of CPUs on this host.
+2025-10-13 15:12:19,688 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-3) WFLYELY00024: Certificate [baltimorecybertrustroot] in KeyStore is not valid: java.security.cert.CertificateExpiredException: NotAfter: Mon May 12 23:59:00 UTC 2025
+	at java.base/sun.security.x509.CertificateValidity.valid(CertificateValidity.java:182)
+	at java.base/sun.security.x509.X509CertImpl.checkValidity(X509CertImpl.java:534)
+	at java.base/sun.security.x509.X509CertImpl.checkValidity(X509CertImpl.java:507)
+	at org.wildfly.extension.elytron@28.0.1.Final//org.wildfly.extension.elytron.KeyStoreService.checkCertificatesValidity(KeyStoreService.java:217)
+	at org.wildfly.extension.elytron@28.0.1.Final//org.wildfly.extension.elytron.KeyStoreService.start(KeyStoreService.java:179)
+	at org.jboss.msc@1.5.5.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1617)
+	at org.jboss.msc@1.5.5.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1580)
+	at org.jboss.msc@1.5.5.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1438)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1363)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2025-10-13 15:12:19,712 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/opt/wildfly/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2025-10-13 15:12:19,717 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0012: Started server default-server.
+2025-10-13 15:12:19,717 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/opt/wildfly/standalone/configuration/resources' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2025-10-13 15:12:19,718 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) Queuing requests.
+2025-10-13 15:12:19,719 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+2025-10-13 15:12:19,750 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/wildfly/standalone/deployments
+2025-10-13 15:12:19,751 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-10-13 15:12:19,759 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTP listener default listening on [0:0:0:0:0:0:0:0]:8080
+2025-10-13 15:12:19,766 INFO  [org.jboss.as.connector.subsystems.datasources.AbstractDataSourceService$AS7DataSourceDeployer] (MSC service thread 1-3) IJ020018: Enabling <validate-on-match> for java:/PacsDS
+2025-10-13 15:12:19,784 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:/PacsDS]
+2025-10-13 15:12:19,784 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2025-10-13 15:12:19,788 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTPS listener https listening on [0:0:0:0:0:0:0:0]:8443
+2025-10-13 15:12:19,818 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 7.3.1.Final (Apache CXF 4.0.6) 
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-export-storage-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-hl7-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-patient-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-store-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-qmgt-5.34.0.jar")
+2025-10-13 15:12:20,286 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-code-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-stgcmt-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-procedure-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-ian-scu-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-update-5.34.0.jar")
+2025-10-13 15:12:20,286 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-retrieve-5.34.0.jar")
+2025-10-13 15:12:20,285 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-compress-5.34.0.jar")
+2025-10-13 15:12:20,287 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-query-5.34.0.jar")
+2025-10-13 15:12:20,287 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-xsl-cda-5.34.0.war")
+2025-10-13 15:12:20,287 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-study-size-5.34.0.jar")
+2025-10-13 15:12:20,287 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-storage-ejb-5.34.0.jar")
+2025-10-13 15:12:20,286 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-restore-5.34.0.jar")
+2025-10-13 15:12:20,287 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-war-5.34.0-unsecure.war")
+2025-10-13 15:12:20,288 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-proxy-5.34.0-unsecure.war")
+2025-10-13 15:12:20,286 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-export-mgt-5.34.0.jar")
+2025-10-13 15:12:20,286 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-mpps-5.34.0.jar")
+2025-10-13 15:12:20,286 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-hl7-psu-5.34.0.jar")
+2025-10-13 15:12:20,288 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-id-5.34.0.jar")
+2025-10-13 15:12:20,288 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-export-jivex-report-5.34.0.jar")
+2025-10-13 15:12:20,288 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-retrieve-xdsi-5.34.0.war")
+2025-10-13 15:12:20,287 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-retrieve-mgt-5.34.0.jar")
+2025-10-13 15:12:20,289 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-study-5.34.0.jar")
+2025-10-13 15:12:20,287 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-qstar-scheduler-5.34.0.jar")
+2025-10-13 15:12:20,287 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-mpps-scu-5.34.0.jar")
+2025-10-13 15:12:20,289 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-pdq-scheduler-5.34.0.jar")
+2025-10-13 15:12:20,289 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-metadata-5.34.0.jar")
+2025-10-13 15:12:20,289 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-diff-5.34.0.jar")
+2025-10-13 15:12:20,289 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-keyvalue-5.34.0.jar")
+2025-10-13 15:12:20,288 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-delete-5.34.0.jar")
+2025-10-13 15:12:20,288 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-ups-5.34.0.jar")
+2025-10-13 15:12:20,289 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0207: Starting subdeployment (runtime-name: "dcm4chee-arc-service-5.34.0.jar")
+2025-10-13 15:12:20,456 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) WFLYJPA0002: Read persistence.xml for dcm4chee-arc
+2025-10-13 15:12:21,063 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-3) WFLYSRV0018: Deployment "deployment.dcm4chee-arc-ear-5.34.0-psql.ear" is using a private module ("org.wildfly.security.elytron-http-oidc") which may be changed or removed in future versions without notice.
+2025-10-13 15:12:21,069 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-3) WFLYSRV0018: Deployment "deployment.dcm4chee-arc-ear-5.34.0-psql.ear" is using a private module ("org.apache.cxf.impl") which may be changed or removed in future versions without notice.
+2025-10-13 15:12:21,115 INFO  [org.jipijapa] (MSC service thread 1-5) JIPIORMV6020260: Second level cache enabled for dcm4chee-arc-ear-5.34.0-psql.ear#dcm4chee-arc
+2025-10-13 15:12:21,162 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment dcm4chee-arc-ear-5.34.0-psql.ear
+2025-10-13 15:12:21,262 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-3) HV000001: Hibernate Validator 8.0.2.Final
+2025-10-13 15:12:21,367 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment dcm4chee-arc-mpps-scu-5.34.0.jar
+2025-10-13 15:12:21,370 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 78) ISPN000556: Starting user marshaller 'org.wildfly.clustering.cache.infinispan.marshalling.UserMarshaller'
+2025-10-13 15:12:21,391 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment dcm4chee-arc-xsl-cda-5.34.0.war
+2025-10-13 15:12:21,401 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment dcm4chee-arc-stgcmt-5.34.0.jar
+2025-10-13 15:12:21,401 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment dcm4chee-arc-query-5.34.0.jar
+2025-10-13 15:12:21,401 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment dcm4chee-arc-retrieve-5.34.0.jar
+2025-10-13 15:12:21,401 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment dcm4chee-arc-delete-5.34.0.jar
+2025-10-13 15:12:21,401 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dcm4chee-arc-qmgt-5.34.0.jar
+2025-10-13 15:12:21,401 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment dcm4chee-arc-compress-5.34.0.jar
+2025-10-13 15:12:21,404 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'RetrieveServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-retrieve-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-retrieve-5.34.0/RetrieveServiceEJB!org.dcm4chee.arc.retrieve.impl.RetrieveServiceEJB
+	java:app/dcm4chee-arc-retrieve-5.34.0/RetrieveServiceEJB!org.dcm4chee.arc.retrieve.impl.RetrieveServiceEJB
+	java:module/RetrieveServiceEJB!org.dcm4chee.arc.retrieve.impl.RetrieveServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-retrieve-5.34.0/RetrieveServiceEJB
+	java:app/dcm4chee-arc-retrieve-5.34.0/RetrieveServiceEJB
+	java:module/RetrieveServiceEJB
+
+2025-10-13 15:12:21,404 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'DeletionServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-delete-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-delete-5.34.0/DeletionServiceEJB!org.dcm4chee.arc.delete.impl.DeletionServiceEJB
+	java:app/dcm4chee-arc-delete-5.34.0/DeletionServiceEJB!org.dcm4chee.arc.delete.impl.DeletionServiceEJB
+	java:module/DeletionServiceEJB!org.dcm4chee.arc.delete.impl.DeletionServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-delete-5.34.0/DeletionServiceEJB
+	java:app/dcm4chee-arc-delete-5.34.0/DeletionServiceEJB
+	java:module/DeletionServiceEJB
+
+2025-10-13 15:12:21,404 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'QuerySizeEJB' in deployment unit 'subdeployment "dcm4chee-arc-query-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-query-5.34.0/QuerySizeEJB!org.dcm4chee.arc.query.impl.QuerySizeEJB
+	java:app/dcm4chee-arc-query-5.34.0/QuerySizeEJB!org.dcm4chee.arc.query.impl.QuerySizeEJB
+	java:module/QuerySizeEJB!org.dcm4chee.arc.query.impl.QuerySizeEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-query-5.34.0/QuerySizeEJB
+	java:app/dcm4chee-arc-query-5.34.0/QuerySizeEJB
+	java:module/QuerySizeEJB
+
+2025-10-13 15:12:21,404 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'CompressionEJB' in deployment unit 'subdeployment "dcm4chee-arc-compress-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-compress-5.34.0/CompressionEJB!org.dcm4chee.arc.compress.impl.CompressionEJB
+	java:app/dcm4chee-arc-compress-5.34.0/CompressionEJB!org.dcm4chee.arc.compress.impl.CompressionEJB
+	java:module/CompressionEJB!org.dcm4chee.arc.compress.impl.CompressionEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-compress-5.34.0/CompressionEJB
+	java:app/dcm4chee-arc-compress-5.34.0/CompressionEJB
+	java:module/CompressionEJB
+
+2025-10-13 15:12:21,404 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'StgCmtEJB' in deployment unit 'subdeployment "dcm4chee-arc-stgcmt-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-stgcmt-5.34.0/StgCmtEJB!org.dcm4chee.arc.stgcmt.impl.StgCmtEJB
+	java:app/dcm4chee-arc-stgcmt-5.34.0/StgCmtEJB!org.dcm4chee.arc.stgcmt.impl.StgCmtEJB
+	java:module/StgCmtEJB!org.dcm4chee.arc.stgcmt.impl.StgCmtEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-stgcmt-5.34.0/StgCmtEJB
+	java:app/dcm4chee-arc-stgcmt-5.34.0/StgCmtEJB
+	java:module/StgCmtEJB
+
+2025-10-13 15:12:21,407 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'QueryAttributesEJB' in deployment unit 'subdeployment "dcm4chee-arc-query-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-query-5.34.0/QueryAttributesEJB!org.dcm4chee.arc.query.impl.QueryAttributesEJB
+	java:app/dcm4chee-arc-query-5.34.0/QueryAttributesEJB!org.dcm4chee.arc.query.impl.QueryAttributesEJB
+	java:module/QueryAttributesEJB!org.dcm4chee.arc.query.impl.QueryAttributesEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-query-5.34.0/QueryAttributesEJB
+	java:app/dcm4chee-arc-query-5.34.0/QueryAttributesEJB
+	java:module/QueryAttributesEJB
+
+2025-10-13 15:12:21,408 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'QueryServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-query-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-query-5.34.0/QueryServiceEJB!org.dcm4chee.arc.query.impl.QueryServiceEJB
+	java:app/dcm4chee-arc-query-5.34.0/QueryServiceEJB!org.dcm4chee.arc.query.impl.QueryServiceEJB
+	java:module/QueryServiceEJB!org.dcm4chee.arc.query.impl.QueryServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-query-5.34.0/QueryServiceEJB
+	java:app/dcm4chee-arc-query-5.34.0/QueryServiceEJB
+	java:module/QueryServiceEJB
+
+2025-10-13 15:12:21,404 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'TaskManagerEJB' in deployment unit 'subdeployment "dcm4chee-arc-qmgt-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-qmgt-5.34.0/TaskManagerEJB!org.dcm4chee.arc.qmgt.impl.TaskManagerEJB
+	java:app/dcm4chee-arc-qmgt-5.34.0/TaskManagerEJB!org.dcm4chee.arc.qmgt.impl.TaskManagerEJB
+	java:module/TaskManagerEJB!org.dcm4chee.arc.qmgt.impl.TaskManagerEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-qmgt-5.34.0/TaskManagerEJB
+	java:app/dcm4chee-arc-qmgt-5.34.0/TaskManagerEJB
+	java:module/TaskManagerEJB
+
+2025-10-13 15:12:21,409 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'RunInTransaction' in deployment unit 'subdeployment "dcm4chee-arc-query-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-query-5.34.0/RunInTransaction!org.dcm4chee.arc.query.RunInTransaction
+	java:app/dcm4chee-arc-query-5.34.0/RunInTransaction!org.dcm4chee.arc.query.RunInTransaction
+	java:module/RunInTransaction!org.dcm4chee.arc.query.RunInTransaction
+	java:global/dcm4chee-arc/dcm4chee-arc-query-5.34.0/RunInTransaction
+	java:app/dcm4chee-arc-query-5.34.0/RunInTransaction
+	java:module/RunInTransaction
+
+2025-10-13 15:12:21,410 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment dcm4chee-arc-retrieve-mgt-5.34.0.jar
+2025-10-13 15:12:21,411 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'RetrieveManagerEJB' in deployment unit 'subdeployment "dcm4chee-arc-retrieve-mgt-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-retrieve-mgt-5.34.0/RetrieveManagerEJB!org.dcm4chee.arc.retrieve.mgt.impl.RetrieveManagerEJB
+	java:app/dcm4chee-arc-retrieve-mgt-5.34.0/RetrieveManagerEJB!org.dcm4chee.arc.retrieve.mgt.impl.RetrieveManagerEJB
+	java:module/RetrieveManagerEJB!org.dcm4chee.arc.retrieve.mgt.impl.RetrieveManagerEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-retrieve-mgt-5.34.0/RetrieveManagerEJB
+	java:app/dcm4chee-arc-retrieve-mgt-5.34.0/RetrieveManagerEJB
+	java:module/RetrieveManagerEJB
+
+2025-10-13 15:12:21,415 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment dcm4chee-arc-pdq-scheduler-5.34.0.jar
+2025-10-13 15:12:21,415 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment dcm4chee-arc-hl7-5.34.0.jar
+2025-10-13 15:12:21,415 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment dcm4chee-arc-ian-scu-5.34.0.jar
+2025-10-13 15:12:21,416 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'PatientVerificationEJB' in deployment unit 'subdeployment "dcm4chee-arc-pdq-scheduler-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-pdq-scheduler-5.34.0/PatientVerificationEJB!org.dcm4chee.arc.pdq.scheduler.PatientVerificationEJB
+	java:app/dcm4chee-arc-pdq-scheduler-5.34.0/PatientVerificationEJB!org.dcm4chee.arc.pdq.scheduler.PatientVerificationEJB
+	java:module/PatientVerificationEJB!org.dcm4chee.arc.pdq.scheduler.PatientVerificationEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-pdq-scheduler-5.34.0/PatientVerificationEJB
+	java:app/dcm4chee-arc-pdq-scheduler-5.34.0/PatientVerificationEJB
+	java:module/PatientVerificationEJB
+
+2025-10-13 15:12:21,433 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment dcm4chee-arc-war-5.34.0-unsecure.war
+2025-10-13 15:12:21,435 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'IANEJB' in deployment unit 'subdeployment "dcm4chee-arc-ian-scu-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-ian-scu-5.34.0/IANEJB!org.dcm4chee.arc.ian.scu.impl.IANEJB
+	java:app/dcm4chee-arc-ian-scu-5.34.0/IANEJB!org.dcm4chee.arc.ian.scu.impl.IANEJB
+	java:module/IANEJB!org.dcm4chee.arc.ian.scu.impl.IANEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-ian-scu-5.34.0/IANEJB
+	java:app/dcm4chee-arc-ian-scu-5.34.0/IANEJB
+	java:module/IANEJB
+
+2025-10-13 15:12:21,438 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dcm4chee-arc-export-mgt-5.34.0.jar
+2025-10-13 15:12:21,439 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ExportManagerEJB' in deployment unit 'subdeployment "dcm4chee-arc-export-mgt-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-export-mgt-5.34.0/ExportManagerEJB!org.dcm4chee.arc.export.mgt.ExportManager
+	java:app/dcm4chee-arc-export-mgt-5.34.0/ExportManagerEJB!org.dcm4chee.arc.export.mgt.ExportManager
+	java:module/ExportManagerEJB!org.dcm4chee.arc.export.mgt.ExportManager
+	java:global/dcm4chee-arc/dcm4chee-arc-export-mgt-5.34.0/ExportManagerEJB
+	java:app/dcm4chee-arc-export-mgt-5.34.0/ExportManagerEJB
+	java:module/ExportManagerEJB
+
+2025-10-13 15:12:21,441 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment dcm4chee-arc-export-storage-5.34.0.jar
+2025-10-13 15:12:21,449 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment dcm4chee-arc-study-size-5.34.0.jar
+2025-10-13 15:12:21,451 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment dcm4chee-arc-patient-5.34.0.jar
+2025-10-13 15:12:21,453 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'PatientServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-patient-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-patient-5.34.0/PatientServiceEJB!org.dcm4chee.arc.patient.impl.PatientServiceEJB
+	java:app/dcm4chee-arc-patient-5.34.0/PatientServiceEJB!org.dcm4chee.arc.patient.impl.PatientServiceEJB
+	java:module/PatientServiceEJB!org.dcm4chee.arc.patient.impl.PatientServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-patient-5.34.0/PatientServiceEJB
+	java:app/dcm4chee-arc-patient-5.34.0/PatientServiceEJB
+	java:module/PatientServiceEJB
+
+2025-10-13 15:12:21,461 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dcm4chee-arc-restore-5.34.0.jar
+2025-10-13 15:12:21,462 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment dcm4chee-arc-retrieve-xdsi-5.34.0.war
+2025-10-13 15:12:21,463 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'RestoreFromMetadataEJB' in deployment unit 'subdeployment "dcm4chee-arc-restore-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-restore-5.34.0/RestoreFromMetadataEJB!org.dcm4chee.arc.restore.RestoreFromMetadata
+	java:app/dcm4chee-arc-restore-5.34.0/RestoreFromMetadataEJB!org.dcm4chee.arc.restore.RestoreFromMetadata
+	java:module/RestoreFromMetadataEJB!org.dcm4chee.arc.restore.RestoreFromMetadata
+	java:global/dcm4chee-arc/dcm4chee-arc-restore-5.34.0/RestoreFromMetadataEJB
+	java:app/dcm4chee-arc-restore-5.34.0/RestoreFromMetadataEJB
+	java:module/RestoreFromMetadataEJB
+
+2025-10-13 15:12:21,463 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment dcm4chee-arc-proxy-5.34.0-unsecure.war
+2025-10-13 15:12:21,463 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment dcm4chee-arc-metadata-5.34.0.jar
+2025-10-13 15:12:21,464 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment dcm4chee-arc-store-5.34.0.jar
+2025-10-13 15:12:21,464 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'UpdateMetadataEJB' in deployment unit 'subdeployment "dcm4chee-arc-metadata-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-metadata-5.34.0/UpdateMetadataEJB!org.dcm4chee.arc.metadata.UpdateMetadataEJB
+	java:app/dcm4chee-arc-metadata-5.34.0/UpdateMetadataEJB!org.dcm4chee.arc.metadata.UpdateMetadataEJB
+	java:module/UpdateMetadataEJB!org.dcm4chee.arc.metadata.UpdateMetadataEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-metadata-5.34.0/UpdateMetadataEJB
+	java:app/dcm4chee-arc-metadata-5.34.0/UpdateMetadataEJB
+	java:module/UpdateMetadataEJB
+
+2025-10-13 15:12:21,465 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'StoreServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-store-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-store-5.34.0/StoreServiceEJB!org.dcm4chee.arc.store.impl.StoreServiceEJB
+	java:app/dcm4chee-arc-store-5.34.0/StoreServiceEJB!org.dcm4chee.arc.store.impl.StoreServiceEJB
+	java:module/StoreServiceEJB!org.dcm4chee.arc.store.impl.StoreServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-store-5.34.0/StoreServiceEJB
+	java:app/dcm4chee-arc-store-5.34.0/StoreServiceEJB
+	java:module/StoreServiceEJB
+
+2025-10-13 15:12:21,470 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dcm4chee-arc-study-5.34.0.jar
+2025-10-13 15:12:21,472 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'StudyServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-study-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-study-5.34.0/StudyServiceEJB!org.dcm4chee.arc.study.impl.StudyServiceEJB
+	java:app/dcm4chee-arc-study-5.34.0/StudyServiceEJB!org.dcm4chee.arc.study.impl.StudyServiceEJB
+	java:module/StudyServiceEJB!org.dcm4chee.arc.study.impl.StudyServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-study-5.34.0/StudyServiceEJB
+	java:app/dcm4chee-arc-study-5.34.0/StudyServiceEJB
+	java:module/StudyServiceEJB
+
+2025-10-13 15:12:21,473 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment dcm4chee-arc-service-5.34.0.jar
+2025-10-13 15:12:21,477 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'ArchiveServiceImpl' in deployment unit 'subdeployment "dcm4chee-arc-service-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-service-5.34.0/ArchiveServiceImpl!org.dcm4chee.arc.ArchiveService
+	java:app/dcm4chee-arc-service-5.34.0/ArchiveServiceImpl!org.dcm4chee.arc.ArchiveService
+	java:module/ArchiveServiceImpl!org.dcm4chee.arc.ArchiveService
+	java:global/dcm4chee-arc/dcm4chee-arc-service-5.34.0/ArchiveServiceImpl
+	java:app/dcm4chee-arc-service-5.34.0/ArchiveServiceImpl
+	java:module/ArchiveServiceImpl
+
+2025-10-13 15:12:21,474 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment dcm4chee-arc-keyvalue-5.34.0.jar
+2025-10-13 15:12:21,479 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'KeyValueServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-keyvalue-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-keyvalue-5.34.0/KeyValueServiceEJB!org.dcm4chee.arc.keyvalue.KeyValueService
+	java:app/dcm4chee-arc-keyvalue-5.34.0/KeyValueServiceEJB!org.dcm4chee.arc.keyvalue.KeyValueService
+	java:module/KeyValueServiceEJB!org.dcm4chee.arc.keyvalue.KeyValueService
+	java:global/dcm4chee-arc/dcm4chee-arc-keyvalue-5.34.0/KeyValueServiceEJB
+	java:app/dcm4chee-arc-keyvalue-5.34.0/KeyValueServiceEJB
+	java:module/KeyValueServiceEJB
+
+2025-10-13 15:12:21,473 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment dcm4chee-arc-export-jivex-report-5.34.0.jar
+2025-10-13 15:12:21,482 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dcm4chee-arc-id-5.34.0.jar
+2025-10-13 15:12:21,482 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment dcm4chee-arc-qstar-scheduler-5.34.0.jar
+2025-10-13 15:12:21,484 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'JiveXReportExporterEJB' in deployment unit 'subdeployment "dcm4chee-arc-export-jivex-report-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-export-jivex-report-5.34.0/JiveXReportExporterEJB!org.dcm4chee.arc.jivex.export.jivex.report.JiveXReportExporterEJB
+	java:app/dcm4chee-arc-export-jivex-report-5.34.0/JiveXReportExporterEJB!org.dcm4chee.arc.jivex.export.jivex.report.JiveXReportExporterEJB
+	java:module/JiveXReportExporterEJB!org.dcm4chee.arc.jivex.export.jivex.report.JiveXReportExporterEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-export-jivex-report-5.34.0/JiveXReportExporterEJB
+	java:app/dcm4chee-arc-export-jivex-report-5.34.0/JiveXReportExporterEJB
+	java:module/JiveXReportExporterEJB
+
+2025-10-13 15:12:21,482 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment dcm4chee-arc-code-5.34.0.jar
+2025-10-13 15:12:21,484 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'QStarVerificationEJB' in deployment unit 'subdeployment "dcm4chee-arc-qstar-scheduler-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-qstar-scheduler-5.34.0/QStarVerificationEJB!org.dcm4chee.arc.qstar.scheduler.QStarVerificationEJB
+	java:app/dcm4chee-arc-qstar-scheduler-5.34.0/QStarVerificationEJB!org.dcm4chee.arc.qstar.scheduler.QStarVerificationEJB
+	java:module/QStarVerificationEJB!org.dcm4chee.arc.qstar.scheduler.QStarVerificationEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-qstar-scheduler-5.34.0/QStarVerificationEJB
+	java:app/dcm4chee-arc-qstar-scheduler-5.34.0/QStarVerificationEJB
+	java:module/QStarVerificationEJB
+
+2025-10-13 15:12:21,483 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'IDServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-id-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-id-5.34.0/IDServiceEJB!org.dcm4chee.arc.id.impl.IDServiceEJB
+	java:app/dcm4chee-arc-id-5.34.0/IDServiceEJB!org.dcm4chee.arc.id.impl.IDServiceEJB
+	java:module/IDServiceEJB!org.dcm4chee.arc.id.impl.IDServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-id-5.34.0/IDServiceEJB
+	java:app/dcm4chee-arc-id-5.34.0/IDServiceEJB
+	java:module/IDServiceEJB
+
+2025-10-13 15:12:21,491 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment dcm4chee-arc-hl7-psu-5.34.0.jar
+2025-10-13 15:12:21,490 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'CodeServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-code-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-code-5.34.0/CodeServiceEJB!org.dcm4chee.arc.code.impl.CodeServiceEJB
+	java:app/dcm4chee-arc-code-5.34.0/CodeServiceEJB!org.dcm4chee.arc.code.impl.CodeServiceEJB
+	java:module/CodeServiceEJB!org.dcm4chee.arc.code.impl.CodeServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-code-5.34.0/CodeServiceEJB
+	java:app/dcm4chee-arc-code-5.34.0/CodeServiceEJB
+	java:module/CodeServiceEJB
+
+2025-10-13 15:12:21,497 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'HL7PSUEJB' in deployment unit 'subdeployment "dcm4chee-arc-hl7-psu-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-hl7-psu-5.34.0/HL7PSUEJB!org.dcm4chee.arc.hl7.psu.HL7PSUEJB
+	java:app/dcm4chee-arc-hl7-psu-5.34.0/HL7PSUEJB!org.dcm4chee.arc.hl7.psu.HL7PSUEJB
+	java:module/HL7PSUEJB!org.dcm4chee.arc.hl7.psu.HL7PSUEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-hl7-psu-5.34.0/HL7PSUEJB
+	java:app/dcm4chee-arc-hl7-psu-5.34.0/HL7PSUEJB
+	java:module/HL7PSUEJB
+
+2025-10-13 15:12:21,503 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment dcm4chee-arc-storage-ejb-5.34.0.jar
+2025-10-13 15:12:21,503 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment dcm4chee-arc-mpps-5.34.0.jar
+2025-10-13 15:12:21,503 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment dcm4chee-arc-ups-5.34.0.jar
+2025-10-13 15:12:21,504 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dcm4chee-arc-procedure-5.34.0.jar
+2025-10-13 15:12:21,505 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'StorageEJB' in deployment unit 'subdeployment "dcm4chee-arc-storage-ejb-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-storage-ejb-5.34.0/StorageEJB!org.dcm4chee.arc.storage.ejb.StorageEJB
+	java:app/dcm4chee-arc-storage-ejb-5.34.0/StorageEJB!org.dcm4chee.arc.storage.ejb.StorageEJB
+	java:module/StorageEJB!org.dcm4chee.arc.storage.ejb.StorageEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-storage-ejb-5.34.0/StorageEJB
+	java:app/dcm4chee-arc-storage-ejb-5.34.0/StorageEJB
+	java:module/StorageEJB
+
+2025-10-13 15:12:21,505 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ProcedureServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-procedure-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-procedure-5.34.0/ProcedureServiceEJB!org.dcm4chee.arc.procedure.impl.ProcedureServiceEJB
+	java:app/dcm4chee-arc-procedure-5.34.0/ProcedureServiceEJB!org.dcm4chee.arc.procedure.impl.ProcedureServiceEJB
+	java:module/ProcedureServiceEJB!org.dcm4chee.arc.procedure.impl.ProcedureServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-procedure-5.34.0/ProcedureServiceEJB
+	java:app/dcm4chee-arc-procedure-5.34.0/ProcedureServiceEJB
+	java:module/ProcedureServiceEJB
+
+2025-10-13 15:12:21,505 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'MPPSServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-mpps-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-mpps-5.34.0/MPPSServiceEJB!org.dcm4chee.arc.mpps.impl.MPPSServiceEJB
+	java:app/dcm4chee-arc-mpps-5.34.0/MPPSServiceEJB!org.dcm4chee.arc.mpps.impl.MPPSServiceEJB
+	java:module/MPPSServiceEJB!org.dcm4chee.arc.mpps.impl.MPPSServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-mpps-5.34.0/MPPSServiceEJB
+	java:app/dcm4chee-arc-mpps-5.34.0/MPPSServiceEJB
+	java:module/MPPSServiceEJB
+
+2025-10-13 15:12:21,504 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'UPSServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-ups-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-ups-5.34.0/UPSServiceEJB!org.dcm4chee.arc.ups.impl.UPSServiceEJB
+	java:app/dcm4chee-arc-ups-5.34.0/UPSServiceEJB!org.dcm4chee.arc.ups.impl.UPSServiceEJB
+	java:module/UPSServiceEJB!org.dcm4chee.arc.ups.impl.UPSServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-ups-5.34.0/UPSServiceEJB
+	java:app/dcm4chee-arc-ups-5.34.0/UPSServiceEJB
+	java:module/UPSServiceEJB
+
+2025-10-13 15:12:21,507 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment dcm4chee-arc-update-5.34.0.jar
+2025-10-13 15:12:21,505 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment dcm4chee-arc-diff-5.34.0.jar
+2025-10-13 15:12:21,508 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'UpdateServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-update-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-update-5.34.0/UpdateServiceEJB!org.dcm4chee.arc.update.impl.UpdateServiceEJB
+	java:app/dcm4chee-arc-update-5.34.0/UpdateServiceEJB!org.dcm4chee.arc.update.impl.UpdateServiceEJB
+	java:module/UpdateServiceEJB!org.dcm4chee.arc.update.impl.UpdateServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-update-5.34.0/UpdateServiceEJB
+	java:app/dcm4chee-arc-update-5.34.0/UpdateServiceEJB
+	java:module/UpdateServiceEJB
+
+2025-10-13 15:12:21,509 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'DiffServiceEJB' in deployment unit 'subdeployment "dcm4chee-arc-diff-5.34.0.jar" of deployment "dcm4chee-arc-ear-5.34.0-psql.ear"' are as follows:
+
+	java:global/dcm4chee-arc/dcm4chee-arc-diff-5.34.0/DiffServiceEJB!org.dcm4chee.arc.diff.impl.DiffServiceEJB
+	java:app/dcm4chee-arc-diff-5.34.0/DiffServiceEJB!org.dcm4chee.arc.diff.impl.DiffServiceEJB
+	java:module/DiffServiceEJB!org.dcm4chee.arc.diff.impl.DiffServiceEJB
+	java:global/dcm4chee-arc/dcm4chee-arc-diff-5.34.0/DiffServiceEJB
+	java:app/dcm4chee-arc-diff-5.34.0/DiffServiceEJB
+	java:module/DiffServiceEJB
+
+2025-10-13 15:12:21,523 INFO  [org.jipijapa] (MSC service thread 1-6) JIPIORMV6020260: Second level cache enabled for dcm4chee-arc-ear-5.34.0-psql.ear#dcm4chee-arc
+2025-10-13 15:12:21,633 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 78) Started hibernate cache container
+2025-10-13 15:12:21,637 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 78) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'dcm4chee-arc-ear-5.34.0-psql.ear#dcm4chee-arc'
+2025-10-13 15:12:21,651 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 78) HHH000204: Processing PersistenceUnitInfo [name: dcm4chee-arc]
+2025-10-13 15:12:21,691 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 78) HHH000412: Hibernate ORM core version 6.6.7.Final
+2025-10-13 15:12:21,765 INFO  [org.jboss.weld.Version] (MSC service thread 1-6) WELD-000900: 5.1.5 (Final)
+2025-10-13 15:12:21,867 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-1) JBWS024061: Adding service endpoint metadata: id=org.dcm4chee.arc.retrieve.xdsi.ImageDocumentSource
+ address=http://172.19.0.4:8080/dcm4chee-arc/xdsi/ImagingDocumentSource
+ implementor=org.dcm4chee.arc.retrieve.xdsi.ImageDocumentSource
+ serviceName={urn:ihe:rad:xdsi-b:2009}ImagingDocumentSource
+ portName={urn:ihe:rad:xdsi-b:2009}ImagingDocumentSource_Port_Soap12
+ annotationWsdlLocation=/wsdl/XDS-I.b_ImagingDocumentSource.wsdl
+ wsdlLocationOverride=null
+ mtomEnabled=true
+2025-10-13 15:12:21,921 WARN  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 78) HHH000511: The 10.5.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2025-10-13 15:12:21,941 INFO  [org.hibernate.orm.connections.pooling] (ServerService Thread Pool -- 78) HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.jboss.as.connector.subsystems.datasources.WildFlyDataSource@342e3547']
+	Database driver: undefined/unknown
+	Database version: 10.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-13 15:12:21,945 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 78) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-10-13 15:12:22,008 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 78) Envers integration enabled? : true
+2025-10-13 15:12:22,208 INFO  [org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-1) Creating Service {urn:ihe:rad:xdsi-b:2009}ImagingDocumentSource from WSDL: /wsdl/XDS-I.b_ImagingDocumentSource.wsdl
+2025-10-13 15:12:22,356 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 78) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'dcm4chee-arc-ear-5.34.0-psql.ear#dcm4chee-arc'
+2025-10-13 15:12:22,434 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-1) Setting the server's publish address to be http://172.19.0.4:8080/dcm4chee-arc/xdsi/ImagingDocumentSource
+2025-10-13 15:12:22,476 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-1) JBWS024074: WSDL published to: file:/opt/wildfly/standalone/data/wsdl/dcm4chee-arc-ear-5.34.0-psql.ear/dcm4chee-arc-retrieve-xdsi-5.34.0.war/wsdl/XDS-I.b_ImagingDocumentSource.wsdl
+2025-10-13 15:12:22,578 INFO  [org.jboss.as.webservices] (MSC service thread 1-8) WFLYWS0003: Starting service jboss.ws.endpoint."dcm4chee-arc-ear-5.34.0-psql.ear"."dcm4chee-arc-retrieve-xdsi-5.34.0.war"."org.dcm4chee.arc.retrieve.xdsi.ImageDocumentSource"
+2025-10-13 15:12:23,386 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-4) WFLYSRV0018: Deployment "deployment.dcm4chee-arc-ui2-5.34.0.war" is using a private module ("org.wildfly.security.elytron-http-oidc") which may be changed or removed in future versions without notice.
+2025-10-13 15:12:23,389 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment dcm4chee-arc-ui2-5.34.0.war
+2025-10-13 15:12:23,696 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0021: Registered web context: '/dcm4chee-arc/ui2' for server 'default-server'
+2025-10-13 15:12:25,022 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 87) WFLYUT0021: Registered web context: '/dcm4chee-arc/xsl' for server 'default-server'
+2025-10-13 15:12:25,023 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 99) WFLYUT0021: Registered web context: '/dcm4chee-proxy' for server 'default-server'
+2025-10-13 15:12:25,024 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 98) UT026003: Adding annotated server endpoint class org.dcm4chee.arc.ups.rs.EventReportSender for path /aets/{AETitle}/ws/subscribers/{SubscriberAET}
+2025-10-13 15:12:25,026 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 106) WFLYUT0021: Registered web context: '/dcm4chee-arc/xdsi' for server 'default-server'
+2025-10-13 15:12:25,039 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 98) WFLYUT0021: Registered web context: '/dcm4chee-arc' for server 'default-server'
+2025-10-13 15:12:25,591 INFO  [org.dcm4chee.arc.impl.ArchiveServiceImpl] (ServerService Thread Pool -- 84) Update Software Version in LDAP to: [5.34.0, 4caaf71, 2025-05-16]
+2025-10-13 15:12:25,752 INFO  [org.dcm4che3.net.Connection] (EE-ManagedExecutorService-default-Thread-1) Start TCP Listener on /0.0.0.0:2575
+2025-10-13 15:12:25,752 INFO  [org.dcm4che3.net.Connection] (EE-ManagedExecutorService-default-Thread-2) Start TCP Listener on /0.0.0.0:11112
+2025-10-13 15:12:25,788 INFO  [org.dcm4che3.net.Connection] (EE-ManagedExecutorService-default-Thread-3) Start TCP Listener on /0.0.0.0:12575
+2025-10-13 15:12:25,789 INFO  [org.dcm4che3.net.Connection] (EE-ManagedExecutorService-default-Thread-4) Start TCP Listener on /0.0.0.0:2762
+2025-10-13 15:12:25,979 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "dcm4chee-arc-ear-5.34.0-psql.ear" (runtime-name : "dcm4chee-arc-ear-5.34.0-psql.ear")
+2025-10-13 15:12:25,979 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "dcm4chee-arc-ui2-5.34.0.war" (runtime-name : "dcm4chee-arc-ui2-5.34.0.war")
+2025-10-13 15:12:26,000 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2025-10-13 15:12:26,006 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0062: Http management interface listening on http://0.0.0.0:9990/management and https://0.0.0.0:9993/management
+2025-10-13 15:12:26,006 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0053: Admin console listening on http://0.0.0.0:9990 and https://0.0.0.0:9993
+2025-10-13 15:12:26,008 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly 36.0.1.Final (WildFly Core 28.0.1.Final) started in 7825ms - Started 3325 of 3510 services (419 services are lazy, passive or on-demand) - Server configuration file in use: dcm4chee-arc.xml - Minimum feature stability level: community
+2025-10-13 15:13:27,749 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) start TaskScheduler.execute()
+2025-10-13 15:13:27,818 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) finished TaskScheduler.execute()
+2025-10-13 15:13:48,743 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) start UPSProcessingScheduler.execute()
+2025-10-13 15:13:49,648 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) finished UPSProcessingScheduler.execute()
+2025-10-13 15:14:06,726 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) start AuditScheduler.execute()
+2025-10-13 15:14:06,758 INFO  [org.dcm4che3.net.audit.AuditLogger] (EE-ManagedScheduledExecutorService-default-Thread-1) Send audit message to /127.0.0.1:514
+2025-10-13 15:14:06,781 INFO  [org.dcm4che3.net.audit.AuditLogger] (EE-ManagedScheduledExecutorService-default-Thread-1) Send audit message to /127.0.0.1:514
+2025-10-13 15:14:06,793 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) finished AuditScheduler.execute()
+2025-10-13 15:14:22,718 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) start IANScheduler.execute()
+2025-10-13 15:14:22,738 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) finished IANScheduler.execute()
+2025-10-13 15:14:23,243 INFO  [org.dcm4chee.arc.qido.QidoRS] (default task-1) Process GET /dcm4chee-arc/aets/DCM4CHEE/rs/studies?limit=101&offset=0&fuzzymatching=true&includefield=00081030%2C00080060 from null@192.168.65.1
+2025-10-13 15:14:27,744 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) start TaskScheduler.execute()
+2025-10-13 15:14:27,776 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) finished TaskScheduler.execute()
+2025-10-13 15:14:49,750 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) start UPSProcessingScheduler.execute()
+2025-10-13 15:14:49,751 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) finished UPSProcessingScheduler.execute()
+2025-10-13 15:15:06,764 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) start AuditScheduler.execute()
+2025-10-13 15:15:06,766 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) finished AuditScheduler.execute()
+2025-10-13 15:15:22,714 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) start IANScheduler.execute()
+2025-10-13 15:15:22,731 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) finished IANScheduler.execute()
+2025-10-13 15:15:24,694 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) start PurgeStorageScheduler.execute()
+2025-10-13 15:15:24,700 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) finished PurgeStorageScheduler.execute()
+2025-10-13 15:15:24,700 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-13) Start deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:15:24,727 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-13) Finished deleting 0 from Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:15:24,727 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-13) Finished deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:15:27,723 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) start TaskScheduler.execute()
+2025-10-13 15:15:27,764 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) finished TaskScheduler.execute()
+2025-10-13 15:15:31,700 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) start StudySizeScheduler.execute()
+2025-10-13 15:15:31,735 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) finished StudySizeScheduler.execute()
+2025-10-13 15:15:36,926 INFO  [org.dcm4chee.arc.conf.rs.QueryDeviceName] (default task-3) Process GET /dcm4chee-arc/devicename from null@192.168.65.1
+2025-10-13 15:15:36,935 INFO  [org.dcm4chee.arc.conf.rs.QueryPDQServices] (default task-2) Process GET /dcm4chee-arc/pdq from null@192.168.65.1
+2025-10-13 15:15:36,936 INFO  [org.dcm4chee.arc.monitor.rs.ArchiveMonitor] (default task-6) Process GET /dcm4chee-arc/monitor/serverTime from null@192.168.65.1
+2025-10-13 15:15:36,940 INFO  [org.dcm4chee.arc.conf.rs.ConfigurationRS] (default task-3) Process GET /dcm4chee-arc/devices/dcm4chee-arc from null@192.168.65.1
+2025-10-13 15:15:36,940 INFO  [org.dcm4chee.arc.conf.rs.ConfigurationRS] (default task-4) Process GET /dcm4chee-arc/devices?dicomDeviceName=dcm4chee-arc from null@192.168.65.1
+2025-10-13 15:15:37,034 INFO  [org.dcm4chee.arc.conf.rs.QueryAttributeFilter] (default task-4) Process GET /dcm4chee-arc/attribute-filter/Patient from null@192.168.65.1
+2025-10-13 15:15:37,034 INFO  [org.dcm4chee.arc.conf.rs.QueryAttributeFilter] (default task-3) Process GET /dcm4chee-arc/attribute-filter/Study from null@192.168.65.1
+2025-10-13 15:15:37,119 INFO  [org.dcm4chee.arc.conf.rs.QueryAETs] (default task-3) Process GET /dcm4chee-arc/aets from null@192.168.65.1
+2025-10-13 15:15:37,195 INFO  [org.dcm4chee.arc.conf.rs.ConfigurationRS] (default task-3) Process GET /dcm4chee-arc/aes from null@192.168.65.1
+2025-10-13 15:15:37,206 INFO  [org.dcm4chee.arc.conf.rs.ConfigurationRS] (default task-3) Process GET /dcm4chee-arc/webapps/?dcmWebServiceClass=MOVE from null@192.168.65.1
+2025-10-13 15:15:37,211 INFO  [org.dcm4chee.arc.conf.rs.ConfigurationRS] (default task-3) Process GET /dcm4chee-arc/webapps/?dcmWebServiceClass=QIDO_RS from null@192.168.65.1
+2025-10-13 15:15:37,256 INFO  [org.dcm4chee.arc.conf.rs.QueryExporters] (default task-2) Process GET /dcm4chee-arc/export from null@192.168.65.1
+2025-10-13 15:15:37,256 INFO  [org.dcm4chee.arc.conf.rs.QueryRejectionNotes] (default task-4) Process GET /dcm4chee-arc/reject/ from null@192.168.65.1
+2025-10-13 15:15:37,257 INFO  [org.dcm4chee.arc.qmgt.rs.QueryQueues] (default task-3) Process GET /dcm4chee-arc/queue from null@192.168.65.1
+2025-10-13 15:15:49,720 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) start UPSProcessingScheduler.execute()
+2025-10-13 15:15:49,727 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) finished UPSProcessingScheduler.execute()
+2025-10-13 15:16:06,763 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) start AuditScheduler.execute()
+2025-10-13 15:16:06,767 INFO  [org.dcm4che3.net.audit.AuditLogger] (EE-ManagedScheduledExecutorService-default-Thread-2) Send audit message to /127.0.0.1:514
+2025-10-13 15:16:06,768 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) finished AuditScheduler.execute()
+2025-10-13 15:16:22,728 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) start IANScheduler.execute()
+2025-10-13 15:16:22,733 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) finished IANScheduler.execute()
+2025-10-13 15:16:27,713 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) start TaskScheduler.execute()
+2025-10-13 15:16:27,740 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) finished TaskScheduler.execute()
+2025-10-13 15:16:48,711 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) start DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:16:48,753 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) finished DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:16:49,732 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) start UPSProcessingScheduler.execute()
+2025-10-13 15:16:49,738 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) finished UPSProcessingScheduler.execute()
+2025-10-13 15:17:06,774 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) start AuditScheduler.execute()
+2025-10-13 15:17:06,777 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) finished AuditScheduler.execute()
+2025-10-13 15:17:22,733 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) start IANScheduler.execute()
+2025-10-13 15:17:22,738 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) finished IANScheduler.execute()
+2025-10-13 15:17:27,709 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) start TaskScheduler.execute()
+2025-10-13 15:17:27,734 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) finished TaskScheduler.execute()
+2025-10-13 15:17:49,741 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) start UPSProcessingScheduler.execute()
+2025-10-13 15:17:49,752 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) finished UPSProcessingScheduler.execute()
+2025-10-13 15:18:06,778 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) start AuditScheduler.execute()
+2025-10-13 15:18:06,779 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) finished AuditScheduler.execute()
+2025-10-13 15:18:22,740 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) start IANScheduler.execute()
+2025-10-13 15:18:22,745 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) finished IANScheduler.execute()
+2025-10-13 15:18:27,709 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) start TaskScheduler.execute()
+2025-10-13 15:18:27,734 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) finished TaskScheduler.execute()
+2025-10-13 15:18:49,754 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) start UPSProcessingScheduler.execute()
+2025-10-13 15:18:49,759 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) finished UPSProcessingScheduler.execute()
+2025-10-13 15:19:06,781 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) start AuditScheduler.execute()
+2025-10-13 15:19:06,784 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) finished AuditScheduler.execute()
+2025-10-13 15:19:22,747 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) start IANScheduler.execute()
+2025-10-13 15:19:22,753 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) finished IANScheduler.execute()
+2025-10-13 15:19:27,708 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) start TaskScheduler.execute()
+2025-10-13 15:19:27,745 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) finished TaskScheduler.execute()
+2025-10-13 15:19:49,762 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) start UPSProcessingScheduler.execute()
+2025-10-13 15:19:49,770 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) finished UPSProcessingScheduler.execute()
+2025-10-13 15:20:06,785 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) start AuditScheduler.execute()
+2025-10-13 15:20:06,787 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) finished AuditScheduler.execute()
+2025-10-13 15:20:22,756 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) start IANScheduler.execute()
+2025-10-13 15:20:22,761 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) finished IANScheduler.execute()
+2025-10-13 15:20:24,687 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) start PurgeStorageScheduler.execute()
+2025-10-13 15:20:24,688 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) finished PurgeStorageScheduler.execute()
+2025-10-13 15:20:24,688 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-34) Start deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:20:24,698 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-34) Finished deleting 0 from Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:20:24,698 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-34) Finished deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:20:27,708 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) start TaskScheduler.execute()
+2025-10-13 15:20:27,735 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) finished TaskScheduler.execute()
+2025-10-13 15:20:31,734 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) start StudySizeScheduler.execute()
+2025-10-13 15:20:31,748 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) finished StudySizeScheduler.execute()
+2025-10-13 15:20:49,772 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) start UPSProcessingScheduler.execute()
+2025-10-13 15:20:49,773 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) finished UPSProcessingScheduler.execute()
+2025-10-13 15:21:06,788 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) start AuditScheduler.execute()
+2025-10-13 15:21:06,789 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) finished AuditScheduler.execute()
+2025-10-13 15:21:22,764 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) start IANScheduler.execute()
+2025-10-13 15:21:22,772 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) finished IANScheduler.execute()
+2025-10-13 15:21:27,708 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) start TaskScheduler.execute()
+2025-10-13 15:21:27,736 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) finished TaskScheduler.execute()
+2025-10-13 15:21:48,753 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) start DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:21:48,785 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) finished DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:21:49,776 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) start UPSProcessingScheduler.execute()
+2025-10-13 15:21:49,781 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) finished UPSProcessingScheduler.execute()
+2025-10-13 15:22:06,789 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) start AuditScheduler.execute()
+2025-10-13 15:22:06,790 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) finished AuditScheduler.execute()
+2025-10-13 15:22:22,773 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) start IANScheduler.execute()
+2025-10-13 15:22:22,778 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) finished IANScheduler.execute()
+2025-10-13 15:22:27,707 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) start TaskScheduler.execute()
+2025-10-13 15:22:27,728 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) finished TaskScheduler.execute()
+2025-10-13 15:22:49,787 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) start UPSProcessingScheduler.execute()
+2025-10-13 15:22:49,791 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) finished UPSProcessingScheduler.execute()
+2025-10-13 15:23:06,791 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) start AuditScheduler.execute()
+2025-10-13 15:23:06,793 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) finished AuditScheduler.execute()
+2025-10-13 15:23:22,778 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) start IANScheduler.execute()
+2025-10-13 15:23:22,786 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) finished IANScheduler.execute()
+2025-10-13 15:23:27,708 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) start TaskScheduler.execute()
+2025-10-13 15:23:27,743 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) finished TaskScheduler.execute()
+2025-10-13 15:23:49,794 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) start UPSProcessingScheduler.execute()
+2025-10-13 15:23:49,797 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) finished UPSProcessingScheduler.execute()
+2025-10-13 15:24:06,795 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) start AuditScheduler.execute()
+2025-10-13 15:24:06,797 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) finished AuditScheduler.execute()
+2025-10-13 15:24:22,792 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) start IANScheduler.execute()
+2025-10-13 15:24:22,800 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) finished IANScheduler.execute()
+2025-10-13 15:24:27,709 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) start TaskScheduler.execute()
+2025-10-13 15:24:27,743 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) finished TaskScheduler.execute()
+2025-10-13 15:24:49,799 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) start UPSProcessingScheduler.execute()
+2025-10-13 15:24:49,802 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) finished UPSProcessingScheduler.execute()
+2025-10-13 15:25:06,799 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) start AuditScheduler.execute()
+2025-10-13 15:25:06,801 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) finished AuditScheduler.execute()
+2025-10-13 15:25:22,801 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) start IANScheduler.execute()
+2025-10-13 15:25:22,806 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) finished IANScheduler.execute()
+2025-10-13 15:25:24,684 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) start PurgeStorageScheduler.execute()
+2025-10-13 15:25:24,685 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) finished PurgeStorageScheduler.execute()
+2025-10-13 15:25:24,685 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-55) Start deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:25:24,688 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-55) Finished deleting 0 from Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:25:24,689 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-55) Finished deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:25:27,706 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) start TaskScheduler.execute()
+2025-10-13 15:25:27,724 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) finished TaskScheduler.execute()
+2025-10-13 15:25:31,748 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) start StudySizeScheduler.execute()
+2025-10-13 15:25:31,752 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) finished StudySizeScheduler.execute()
+2025-10-13 15:25:49,808 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) start UPSProcessingScheduler.execute()
+2025-10-13 15:25:49,813 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) finished UPSProcessingScheduler.execute()
+2025-10-13 15:26:06,802 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) start AuditScheduler.execute()
+2025-10-13 15:26:06,806 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) finished AuditScheduler.execute()
+2025-10-13 15:26:10,698 INFO  [org.dcm4chee.arc.qmgt.impl.PurgeTaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) start PurgeTaskScheduler.execute()
+2025-10-13 15:26:10,782 INFO  [org.dcm4chee.arc.qmgt.impl.PurgeTaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) finished PurgeTaskScheduler.execute()
+2025-10-13 15:26:22,808 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) start IANScheduler.execute()
+2025-10-13 15:26:22,812 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) finished IANScheduler.execute()
+2025-10-13 15:26:27,706 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) start TaskScheduler.execute()
+2025-10-13 15:26:27,733 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) finished TaskScheduler.execute()
+2025-10-13 15:26:48,786 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) start DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:26:48,807 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) finished DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:26:49,812 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) start UPSProcessingScheduler.execute()
+2025-10-13 15:26:49,814 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) finished UPSProcessingScheduler.execute()
+2025-10-13 15:27:06,807 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) start AuditScheduler.execute()
+2025-10-13 15:27:06,808 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) finished AuditScheduler.execute()
+2025-10-13 15:27:22,813 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) start IANScheduler.execute()
+2025-10-13 15:27:22,818 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) finished IANScheduler.execute()
+2025-10-13 15:27:27,708 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) start TaskScheduler.execute()
+2025-10-13 15:27:27,742 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) finished TaskScheduler.execute()
+2025-10-13 15:27:49,815 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) start UPSProcessingScheduler.execute()
+2025-10-13 15:27:49,816 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) finished UPSProcessingScheduler.execute()
+2025-10-13 15:28:06,810 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) start AuditScheduler.execute()
+2025-10-13 15:28:06,813 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) finished AuditScheduler.execute()
+2025-10-13 15:28:22,821 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) start IANScheduler.execute()
+2025-10-13 15:28:22,825 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) finished IANScheduler.execute()
+2025-10-13 15:28:27,705 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) start TaskScheduler.execute()
+2025-10-13 15:28:27,728 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) finished TaskScheduler.execute()
+2025-10-13 15:28:49,818 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) start UPSProcessingScheduler.execute()
+2025-10-13 15:28:49,819 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) finished UPSProcessingScheduler.execute()
+2025-10-13 15:29:06,815 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) start AuditScheduler.execute()
+2025-10-13 15:29:06,816 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) finished AuditScheduler.execute()
+2025-10-13 15:29:22,826 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) start IANScheduler.execute()
+2025-10-13 15:29:22,829 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) finished IANScheduler.execute()
+2025-10-13 15:29:27,705 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) start TaskScheduler.execute()
+2025-10-13 15:29:27,727 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) finished TaskScheduler.execute()
+2025-10-13 15:29:49,820 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) start UPSProcessingScheduler.execute()
+2025-10-13 15:29:49,822 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) finished UPSProcessingScheduler.execute()
+2025-10-13 15:30:06,816 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) start AuditScheduler.execute()
+2025-10-13 15:30:06,817 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) finished AuditScheduler.execute()
+2025-10-13 15:30:22,829 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) start IANScheduler.execute()
+2025-10-13 15:30:22,832 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) finished IANScheduler.execute()
+2025-10-13 15:30:24,683 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) start PurgeStorageScheduler.execute()
+2025-10-13 15:30:24,684 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) finished PurgeStorageScheduler.execute()
+2025-10-13 15:30:24,684 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-76) Start deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:30:24,694 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-76) Finished deleting 0 from Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:30:24,694 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-76) Finished deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:30:27,708 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) start TaskScheduler.execute()
+2025-10-13 15:30:27,743 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) finished TaskScheduler.execute()
+2025-10-13 15:30:31,751 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) start StudySizeScheduler.execute()
+2025-10-13 15:30:31,760 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) finished StudySizeScheduler.execute()
+2025-10-13 15:30:49,823 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) start UPSProcessingScheduler.execute()
+2025-10-13 15:30:49,825 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) finished UPSProcessingScheduler.execute()
+2025-10-13 15:31:06,817 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) start AuditScheduler.execute()
+2025-10-13 15:31:06,818 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) finished AuditScheduler.execute()
+2025-10-13 15:31:22,832 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) start IANScheduler.execute()
+2025-10-13 15:31:22,836 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) finished IANScheduler.execute()
+2025-10-13 15:31:27,704 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) start TaskScheduler.execute()
+2025-10-13 15:31:27,739 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) finished TaskScheduler.execute()
+2025-10-13 15:31:48,810 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) start DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:31:48,842 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) finished DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:31:49,828 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) start UPSProcessingScheduler.execute()
+2025-10-13 15:31:49,829 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) finished UPSProcessingScheduler.execute()
+2025-10-13 15:32:06,822 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) start AuditScheduler.execute()
+2025-10-13 15:32:06,823 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) finished AuditScheduler.execute()
+2025-10-13 15:32:22,837 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) start IANScheduler.execute()
+2025-10-13 15:32:22,842 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) finished IANScheduler.execute()
+2025-10-13 15:32:27,704 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) start TaskScheduler.execute()
+2025-10-13 15:32:27,734 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) finished TaskScheduler.execute()
+2025-10-13 15:32:49,830 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) start UPSProcessingScheduler.execute()
+2025-10-13 15:32:49,831 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) finished UPSProcessingScheduler.execute()
+2025-10-13 15:33:06,825 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) start AuditScheduler.execute()
+2025-10-13 15:33:06,826 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) finished AuditScheduler.execute()
+2025-10-13 15:33:22,843 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) start IANScheduler.execute()
+2025-10-13 15:33:22,850 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) finished IANScheduler.execute()
+2025-10-13 15:33:27,705 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) start TaskScheduler.execute()
+2025-10-13 15:33:27,731 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) finished TaskScheduler.execute()
+2025-10-13 15:33:49,832 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) start UPSProcessingScheduler.execute()
+2025-10-13 15:33:49,833 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) finished UPSProcessingScheduler.execute()
+2025-10-13 15:34:06,827 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) start AuditScheduler.execute()
+2025-10-13 15:34:06,828 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) finished AuditScheduler.execute()
+2025-10-13 15:34:22,851 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) start IANScheduler.execute()
+2025-10-13 15:34:22,858 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) finished IANScheduler.execute()
+2025-10-13 15:34:27,707 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) start TaskScheduler.execute()
+2025-10-13 15:34:27,741 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) finished TaskScheduler.execute()
+2025-10-13 15:34:49,834 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) start UPSProcessingScheduler.execute()
+2025-10-13 15:34:49,835 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) finished UPSProcessingScheduler.execute()
+2025-10-13 15:35:06,832 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) start AuditScheduler.execute()
+2025-10-13 15:35:06,834 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) finished AuditScheduler.execute()
+2025-10-13 15:35:22,862 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) start IANScheduler.execute()
+2025-10-13 15:35:22,871 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) finished IANScheduler.execute()
+2025-10-13 15:35:24,682 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) start PurgeStorageScheduler.execute()
+2025-10-13 15:35:24,686 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) finished PurgeStorageScheduler.execute()
+2025-10-13 15:35:24,687 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-97) Start deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:35:24,695 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-97) Finished deleting 0 from Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:35:24,695 INFO  [org.dcm4chee.arc.delete.impl.PurgeStorageScheduler] (EE-ManagedExecutorService-default-Thread-97) Finished deletion on Storage[id=fs1, uri=file:///storage/fs1/]
+2025-10-13 15:35:27,703 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) start TaskScheduler.execute()
+2025-10-13 15:35:27,738 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) finished TaskScheduler.execute()
+2025-10-13 15:35:31,761 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) start StudySizeScheduler.execute()
+2025-10-13 15:35:31,765 INFO  [org.dcm4chee.arc.study.size.StudySizeScheduler] (EE-ManagedScheduledExecutorService-default-Thread-8) finished StudySizeScheduler.execute()
+2025-10-13 15:35:49,837 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) start UPSProcessingScheduler.execute()
+2025-10-13 15:35:49,838 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-18) finished UPSProcessingScheduler.execute()
+2025-10-13 15:36:06,837 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) start AuditScheduler.execute()
+2025-10-13 15:36:06,842 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-9) finished AuditScheduler.execute()
+2025-10-13 15:36:22,882 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) start IANScheduler.execute()
+2025-10-13 15:36:22,889 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-19) finished IANScheduler.execute()
+2025-10-13 15:36:27,702 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) start TaskScheduler.execute()
+2025-10-13 15:36:27,719 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-10) finished TaskScheduler.execute()
+2025-10-13 15:36:48,845 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) start DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:36:48,853 INFO  [org.dcm4chee.arc.delete.impl.DeleteRejectedInstancesScheduler] (EE-ManagedScheduledExecutorService-default-Thread-20) finished DeleteRejectedInstancesScheduler.execute()
+2025-10-13 15:36:49,839 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) start UPSProcessingScheduler.execute()
+2025-10-13 15:36:49,840 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-11) finished UPSProcessingScheduler.execute()
+2025-10-13 15:37:06,848 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) start AuditScheduler.execute()
+2025-10-13 15:37:06,848 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-12) finished AuditScheduler.execute()
+2025-10-13 15:37:22,897 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) start IANScheduler.execute()
+2025-10-13 15:37:22,904 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-3) finished IANScheduler.execute()
+2025-10-13 15:37:27,704 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) start TaskScheduler.execute()
+2025-10-13 15:37:27,727 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-2) finished TaskScheduler.execute()
+2025-10-13 15:37:49,840 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) start UPSProcessingScheduler.execute()
+2025-10-13 15:37:49,842 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-4) finished UPSProcessingScheduler.execute()
+2025-10-13 15:38:06,850 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) start AuditScheduler.execute()
+2025-10-13 15:38:06,853 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-13) finished AuditScheduler.execute()
+2025-10-13 15:38:22,911 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) start IANScheduler.execute()
+2025-10-13 15:38:22,925 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-1) finished IANScheduler.execute()
+2025-10-13 15:38:27,703 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) start TaskScheduler.execute()
+2025-10-13 15:38:27,736 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-14) finished TaskScheduler.execute()
+2025-10-13 15:38:54,308 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) start UPSProcessingScheduler.execute()
+2025-10-13 15:38:59,282 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-5) finished UPSProcessingScheduler.execute()
+2025-10-13 15:40:36,486 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) start AuditScheduler.execute()
+2025-10-13 15:40:36,487 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-15) finished AuditScheduler.execute()
+2025-10-13 15:40:52,561 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) start IANScheduler.execute()
+2025-10-13 15:40:52,567 INFO  [org.dcm4chee.arc.ian.scu.IANScheduler] (EE-ManagedScheduledExecutorService-default-Thread-6) finished IANScheduler.execute()
+2025-10-13 15:40:57,333 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) start TaskScheduler.execute()
+2025-10-13 15:40:57,352 INFO  [org.dcm4chee.arc.qmgt.impl.TaskScheduler] (EE-ManagedScheduledExecutorService-default-Thread-16) finished TaskScheduler.execute()
+2025-10-13 15:41:24,464 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) start UPSProcessingScheduler.execute()
+2025-10-13 15:41:24,466 INFO  [org.dcm4chee.arc.ups.process.impl.UPSProcessingScheduler] (EE-ManagedScheduledExecutorService-default-Thread-7) finished UPSProcessingScheduler.execute()
+2025-10-13 15:41:36,489 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) start AuditScheduler.execute()
+2025-10-13 15:41:36,491 INFO  [org.dcm4chee.arc.audit.AuditScheduler] (EE-ManagedScheduledExecutorService-default-Thread-17) finished AuditScheduler.execute()
