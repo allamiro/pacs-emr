@@ -162,7 +162,7 @@ services:
     restart: unless-stopped
     ports:
       - "8081:8080"
-      - "8443:8443"
+      - "8444:8443"
       - "11113:11113"
     networks:
       - dcm4chee-network
